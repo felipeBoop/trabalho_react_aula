@@ -4,13 +4,13 @@ import { DadosDog } from "./DadosDog";
 export function CardDog(){    
     const [fotos, setFoto] = useState("");
     
-    useState(() => {
+    useEffect(() => {
         fetch("https://dog.ceo/api/breeds/image/random")
             .then(response => response.json())
             .then(data => {                    
                 setFoto(data.message)
             })                
-     }); 
+     }, []); 
 
     return (
         <div>
